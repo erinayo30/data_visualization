@@ -8,8 +8,8 @@ class RandomWalk:
         self.num_points = num_points
 
         # all walk starks at (0,0)
-        self.x=[0]
-        self.y=[0]
+        self.x_values=[0]
+        self.y_values=[0]
 
     def fill_walk(self):
         """Calculate all points gain in the walk"""
@@ -18,11 +18,11 @@ class RandomWalk:
             # Decide which direction to go and how far
             x_direction= choice([1, -1])
             x_distance = choice([0,1,2,3,4])
-            x_step = x_direction * y_distance
+            x_step = x_direction * x_distance
 
             y_direction= choice([1, -1])
             y_distance = choice([0,1,2,3,4])
-            y_step = x_direction * x_distance
+            y_step = y_direction * y_distance
 
             # reject moves that go nowhere
             if x_step == 0 and y_step ==0:
@@ -32,5 +32,5 @@ class RandomWalk:
             x = self.x_values[-1] + x_step
             y = self.y_values[-1] + y_step
 
-            self.x_value.append()
-            self.y_values.append()
+            self.x_values.append(x)
+            self.y_values.append(y)
